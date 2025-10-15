@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Meta>
+    <title>Action Status: what am I doing?</title>
+    <id>atherim.actionstatus</id>
+    <author>atherim</author>
+    <loadPriority>100</loadPriority>
+    <version>0.23.213</version>   <!-- This is last game version tested for compatibility, not the mod version. See ActionStausMod.cs for that -->
+    <tags>General,QoL,UI</tags>
+    <description>Display current action status on the status info widget. E.g. Idle, fishing, collect (mining, woodcutting), eat, etc...</description>    <!-- This should be done on steam workshop, but works as well? -->
+    <builtin>false</builtin>    <!-- Set this to false. Don't worry about it. Don't think about it. -->
+    <visibility>Public</visibility>
+</Meta>
