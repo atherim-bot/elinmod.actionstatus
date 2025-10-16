@@ -25,7 +25,7 @@
         - Combat actions
         
         GitHub repo: https://github.com/atherim-bot/elinmod.actionstatus    
-    </description>    <!-- This should be done on steam workshop, but works as well? -->
+    </description>    <!-- This should be done on steam workshop, only works on first upload, does not update -->
     <builtin>false</builtin>    <!-- Set this to false. Don't worry about it. Don't think about it. -->
     <visibility>Public</visibility>
 </Meta>
