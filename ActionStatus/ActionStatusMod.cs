@@ -48,13 +48,10 @@ internal class ActionStatusMod : BaseUnityPlugin
         switch (_isInCombat)
         {
             case false when playerChara.IsInCombat:
-                Log("go to combat");
                 _isInCombat = true;
                 WidgetStatsBarPatch.ActionNotification!.text = "Fighting!";
-                WidgetStatsBarPatch.ActionNotification.Refresh();
                 return;
             case true when !playerChara.IsInCombat:
-                Log("out of combat");
                 _isInCombat = false;
                 WidgetStatsBarPatch.ActionNotification!.text = "Idle";
                 return;
