@@ -17,6 +17,7 @@ internal class ActionStatusMod : BaseUnityPlugin
     private static ActionStatusMod? Instance { get; set; }
 
     private string? _previousAction;
+    private bool _isSleeping = false;
 
     private void Awake()
     {
@@ -26,10 +27,22 @@ internal class ActionStatusMod : BaseUnityPlugin
 
     private void Update()
     {
-        if (!Core.Instance.IsGameStarted) return;
+        if (!Core.Instance.IsGameStarted || EMono.player == null || EMono.player.chara == null) return;
 
         var playerAction = EMono.player.chara.GetActionText();
         
+        switch (_isSleeping)
+        {
+            case false when EMono.player.chara.conSleep != null:
+                _isSleeping = true;
+                WidgetStatsBarPatch.ActionNotification!.text = "Sleeping";
+                return;
+            case true when EMono.player.chara.conSleep == null:
+                _isSleeping = false;
+                WidgetStatsBarPatch.ActionNotification!.text = "Idle";
+                return;
+        }
+
         if (playerAction == _previousAction) return;
 
         _previousAction = playerAction;
